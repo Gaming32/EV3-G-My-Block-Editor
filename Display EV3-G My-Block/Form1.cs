@@ -15,6 +15,7 @@ namespace Display_EV3_G_My_Block
         public Form1(string file, string myBlock)
         {
             InitializeComponent();
+            Focus();
         }
     }
 }
