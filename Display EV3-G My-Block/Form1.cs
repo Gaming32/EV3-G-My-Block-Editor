@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Display_EV3_G_My_Block
 {
-    public partial class Form1 : Form
+    public partial class mbDisplay : Form
     {
-        public Form1(string file, string myBlock)
+        public mbDisplay(string file, string myBlock)
         {
             InitializeComponent();
             Focus();

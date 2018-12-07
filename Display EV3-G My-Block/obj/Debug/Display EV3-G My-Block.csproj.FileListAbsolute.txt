@@ -7,3 +7,6 @@ C:\Users\josia\MEGA\Projects\Visual Studio Projects\Display EV3-G My-Block\Displ
 C:\Users\josia\MEGA\Projects\Visual Studio Projects\Display EV3-G My-Block\Display EV3-G My-Block\obj\Debug\Display EV3-G My-Block.csproj.GenerateResource.Cache
 C:\Users\josia\MEGA\Projects\Visual Studio Projects\Display EV3-G My-Block\Display EV3-G My-Block\obj\Debug\Display EV3-G My-Block.exe
 C:\Users\josia\MEGA\Projects\Visual Studio Projects\Display EV3-G My-Block\Display EV3-G My-Block\obj\Debug\Display EV3-G My-Block.pdb
+C:\Users\josia\MEGA\Projects\Visual Studio Projects\Display EV3-G My-Block\Display EV3-G My-Block\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\josia\MEGA\Projects\Visual Studio Projects\Display EV3-G My-Block\Display EV3-G My-Block\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\josia\MEGA\Projects\Visual Studio Projects\Display EV3-G My-Block\Display EV3-G My-Block\obj\Debug\Display_EV3_G_My_Block.mbDisplay.resources
