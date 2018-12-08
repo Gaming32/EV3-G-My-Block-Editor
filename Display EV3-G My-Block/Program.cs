@@ -48,7 +48,7 @@ namespace Display_EV3_G_My_Block
                 }
             }
 
-            Application.Run(new mbDisplay(file, myBlock));
+            Application.Run(new mbTools(file, myBlock));
         }
     }
 }
