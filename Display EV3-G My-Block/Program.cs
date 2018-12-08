@@ -18,7 +18,7 @@ namespace Display_EV3_G_My_Block
             Application.SetCompatibleTextRenderingDefault(false);
 
             string file;
-            string myBlock;
+            string ev3p;
 
             if (args.Length < 1)
                 file = null;
@@ -26,9 +26,9 @@ namespace Display_EV3_G_My_Block
                 file = args[0];
 
             if (args.Length < 2)
-                myBlock = null;
+                ev3p = null;
             else
-                myBlock = args[1];
+                ev3p = args[1];
 
             using(OpenFileDialog load = new OpenFileDialog())
             {
@@ -48,7 +48,7 @@ namespace Display_EV3_G_My_Block
                 }
             }
 
-            Application.Run(new mbTools(file, myBlock));
+            Application.Run(new mbTools(file, ev3p));
         }
     }
 }
