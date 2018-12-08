@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO.Compression;
 
 namespace Display_EV3_G_My_Block
 {
@@ -49,6 +50,11 @@ namespace Display_EV3_G_My_Block
             }
 
             Application.Run(new mbTools(file, ev3p));
+        }
+
+        public static string GetEV3PFromArgs(string arg)
+        {
+
         }
     }
 }
