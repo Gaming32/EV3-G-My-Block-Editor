@@ -52,9 +52,23 @@ namespace Display_EV3_G_My_Block
             Application.Run(new mbTools(file, ev3p));
         }
 
-        public static string GetEV3PFromArgs(string arg)
+        public static string GetEV3PFromArgs(string file, string ev3p)
         {
-
+            List<string> possibleEntries = new List<string>();
+            using(ZipArchive archive = ZipFile.OpenRead(file))
+            {
+                foreach (ZipArchiveEntry entry in archive.Entries)
+                {
+                    if (entry.Name.EndsWith(".ev3p"))
+                        possibleEntries.Add(entry.Name.TrimEnd(".ev3p".ToCharArray()));
+                }
+            }
+            foreach(string entry in possibleEntries)
+            {
+                if (entry == ev3p)
+                    return entry;
+            }
+            return null;
         }
     }
 }
