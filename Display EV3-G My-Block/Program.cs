@@ -62,25 +62,27 @@ namespace Display_EV3_G_My_Block
                         break;
                 }
             }
+            ev3p = GetEV3PFromArgs(file, ev3p);
+            MessageBox.Show(ev3p);
             form = new mbTools(file, ev3p);
             form.Activate();
         }
 
         public static string GetEV3PFromArgs(string file, string ev3p)
         {
-            List<string> possibleEntries = new List<string>();
+            List<ZipArchiveEntry> possibleEntries = new List<ZipArchiveEntry>();
             using(ZipArchive archive = ZipFile.OpenRead(file))
             {
                 foreach (ZipArchiveEntry entry in archive.Entries)
                 {
                     if (entry.Name.EndsWith(".ev3p"))
-                        possibleEntries.Add(entry.Name.TrimEnd(".ev3p".ToCharArray()));
+                        possibleEntries.Add(entry);
                 }
             }
-            foreach(string entry in possibleEntries)
+            foreach(ZipArchiveEntry entry in possibleEntries)
             {
-                if (entry == ev3p)
-                    return entry;
+                if (entry.Name.TrimEnd(".ev3p".ToCharArray()) == ev3p)
+                    return entry.FullName;
             }
             return null;
         }
