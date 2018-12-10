@@ -17,7 +17,7 @@ namespace Display_EV3_G_My_Block
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            mbTools form;
+            bool kill = false;
 
             string file;
             string ev3p;
@@ -48,15 +48,11 @@ namespace Display_EV3_G_My_Block
                         DialogResult result = MessageBox.Show("Please enter a valid file.", "Invalid File", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Information);
                         if (result == DialogResult.Abort)
                         {
-                            Application.Exit();
+                            kill = true;
                             break;
                         }
                         else if (result == DialogResult.Ignore)
-                        {
-                            form = new mbTools(file, ev3p);
-                            form.Activate();
                             break;
-                        }
                     }
                     else
                         break;
@@ -64,8 +60,7 @@ namespace Display_EV3_G_My_Block
             }
             ev3p = GetEV3PFromArgs(file, ev3p);
             MessageBox.Show(ev3p);
-            form = new mbTools(file, ev3p);
-            form.Activate();
+            Application.Run(new mbTools(file, ev3p, kill));
         }
 
         public static string GetEV3PFromArgs(string file, string ev3p)

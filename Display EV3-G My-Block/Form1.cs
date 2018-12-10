@@ -12,8 +12,10 @@ namespace Display_EV3_G_My_Block
 {
     public partial class mbTools : Form
     {
-        public mbTools(string file, string ev3p)
+        public mbTools(string file, string ev3p, bool kill)
         {
+            if (kill)
+                Application.Exit();
             InitializeComponent();
             Focus();
         }
