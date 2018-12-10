@@ -44,7 +44,11 @@ namespace Display_EV3_G_My_Block
                     }
                     if (!System.IO.File.Exists(file))
                     {
-                        MessageBox.Show("Please enter a valid file.", "Invalid File", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Information);
+                        DialogResult result = MessageBox.Show("Please enter a valid file.", "Invalid File", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Information);
+                        if (result == DialogResult.Abort)
+                            Application.Exit();
+                        else if (result == DialogResult.Ignore)
+                            break;
                     }
                     else
                         break;
