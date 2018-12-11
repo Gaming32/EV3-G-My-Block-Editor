@@ -72,6 +72,7 @@ namespace Display_EV3_G_My_Block
                 {
                     if (entry.Name.EndsWith(".ev3p"))
                         possibleEntries.Add(entry);
+                    MessageBox.Show(new EV3P.EV3P(entry).ToString());
                 }
             }
             foreach(ZipArchiveEntry entry in possibleEntries)
