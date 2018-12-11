@@ -37,7 +37,7 @@ namespace Display_EV3_G_My_Block.EV3P
         {
             try
             {
-                ZipArchiveEntry data = ev3p.Archive.GetEntry(ev3p.FullName.TrimEnd(".ev3p".ToCharArray()) + ".mbxml");
+                ZipArchiveEntry data = ev3p.Archive.GetEntry(ev3p.FullName + ".mbxml");
                 XmlDocument mbxml = new XmlDocument();
                 mbxml.Load(data.Open());
                 this.type = ProgramTypes.MyBlock;
@@ -68,10 +68,30 @@ namespace Display_EV3_G_My_Block.EV3P
 
         public override string ToString()
         {
-            List<string> strParameters = new List<string>();
-            foreach(KeyValuePair<string, MyBlock_Parameter> parameter in parameters)
-                strParameters.Add($"[Name={parameter.Key}; DisplayName={parameter.Value.displayName}; Direction={parameter.Value.direction}; Image={parameter.Value.imageId}; DataType={parameter.Value.dataType}");
-            return $@"Parameters = {String.Join("\r\n             ", strParameters.ToArray())}";
+            string returnValue = "";
+
+            //Return path
+            returnValue += "Path =       ";
+            returnValue += path;
+
+            //Return type
+            returnValue += "\r\n";
+            returnValue += "Type =       ";
+            if (type == ProgramTypes.MyBlock)
+                returnValue += "MyBlock";
+            else
+                returnValue += "Program";
+
+            //Return parameters
+            returnValue += "\r\n";
+            if (type == ProgramTypes.MyBlock)
+            {
+                List<string> strParameters = new List<string>();
+                foreach (KeyValuePair<string, MyBlock_Parameter> parameter in parameters)
+                    strParameters.Add($"[Name={parameter.Key}; DisplayName={parameter.Value.displayName}; Direction={parameter.Value.direction}; Image={parameter.Value.imageId}; DataType={parameter.Value.dataType}");
+                returnValue += $@"Parameters = {String.Join("\r\n             ", strParameters.ToArray())}";
+            }
+            return returnValue;
         }
     }
 }
