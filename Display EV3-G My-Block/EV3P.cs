@@ -37,7 +37,7 @@ namespace Display_EV3_G_My_Block.EV3P
         {
             try
             {
-                ZipArchiveEntry data = ev3p.Archive.GetEntry(ev3p.FullName + ".mbxml");
+                ZipArchiveEntry data = ev3p.Archive.GetEntry(ev3p.Name + ".mbxml");
                 XmlDocument mbxml = new XmlDocument();
                 mbxml.Load(data.Open());
                 this.type = ProgramTypes.MyBlock;
