@@ -11,6 +11,7 @@ namespace Display_EV3_G_My_Block.EV3P
     /// <summary>
     /// A class for storing data for an EV3 Program file (*.ev3p)
     /// </summary>
+    [Serializable]
     class EV3P
     {
         public enum ProgramTypes {Program = 0, MyBlock = 1};
